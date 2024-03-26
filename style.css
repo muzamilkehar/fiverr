@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Fira  Sans',sans-serif;
+}
+
+body{
+  background: #1B1B1D;
+
+}
+
+header{
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 20px;
+}
+
+header .navbar{
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .menu-links{
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 30px;
+}
+
+.navbar .menu-links a{
+  color: white;
+  text-decoration: none;
+  transition: 0.2s;
+
+}
+
+.navbar .menu-links a:hover{
+  color: #19a463;
+}
+
+.navbar .menu-links .join-button a{
+  border: 1px solid  #fff;
+  border-radius: 4px;
+  padding: 8px 15px;
+}A
+
+.navbar .menu-links .join-button a:hover{
+  background: #19a463;
+  color: #fff;
+  border-color: transparent;
+}
+
+
+.hero-section{
+  height: 100vh;
+  background: url(images/hero-img.jpg);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.hero-section .content{
+  max-width: 1400px;
+  margin: 0 auto 40px;
+  width: 100%;
+}
+
+.hero-section .content h1{
+  color: #fff;
+  font-size: 48px;
+  max-width: 630px;
+}
+
+.hero-section .search-form{
+  display: flex;
+  height: 48px;
+  max-width: 630px; 
+  margin-top: 30px;
+  
+}
+
+.hero-section .search-form input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  background: #fff;
+  font-size: 16px;
+  border-radius: 4px 0 0 4px;
+  padding: 0 15px;
+  
+}
+
+.hero-section .search-form button {
+  height: 100%;
+  width: 60px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+  background: #1dbf73;
+  color: #fff;
+  transition: 0.2s ease ;
+}
+
+.hero-section .search-form button:hover {
+  background: #19a463;
+}
+
+.hero-section .popular-tags {
+  display: flex;
+  color: #fff;
+  gap: 24px;
+  font-size: 14px;
+  margin-top: 25px;
+  font-weight: 600;
+  align-items: center;
+}
+
+.hero-section .popular-tags .tags {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.hero-section .tags li a {
+  color: white;
+  border: 1px solid white;
+  border-radius: 50px;
+  padding: 4px 12px;
+  text-decoration: none ;
+  transition: 0.2s;
+}
+
+.hero-section .tags li a:hover {
+  background: white;
+  color:#1B1B1D;
+}
+
+.navbar #hamburger-btn{
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  display: none;
+}
+
+.navbar #close-menu-btn{
+  color: black;
+  font-size: 18px;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+
+}
+
+
+
+@media screen and (max-width: 900px) {
+
+  .navbar :is(#hamburger-btn, #close-menu-button) {
+    display: block;
+  }
+  .navbar .menu-links {
+    max-width: 300px;
+    background: white;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    left: -300px;
+    top: 0;
+    padding: 75px 40px 0;
+    transition: left 0.2s ease;
+    display: block;
+  }
+
+  header.show-mobile-menu .navbar .menu-links {
+    left:0;
+  }
+
+  header.show-mobile-menu::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+  } 
+
+  .navbar .menu-links li {
+    margin-bottom: 30px;
+
+  }
+  .navbar .menu-links a {
+    color: black;
+    font-size: 13px;
+  }
+
+  .navbar .menu-links .join-button a {
+    padding: 0;
+  }
+
+  .navbar .menu-links .join-button:hover {
+    color: #1dbf73;
+    background: none;
+  }
+  .hero-section{
+    background: none;
+  }
+
+  .hero-section .content  :is(h1, .search-form){
+    max-width: 100%;
+  }
+
+  .hero-section .content h1 {
+    text-align: center;
+    font-size: 40px;
+    line-height: 55px;
+  }
+
+  .hero-section .search-form {
+    display: block;
+    margin-top: 20px;
+  }
+
+  .hero-section .search-form{
+    border-radius: 4px;
+  }
+
+  .hero-section .search-form button {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 4px;
+  }
+
+  .hero-section .popular-tags {
+    display: none;
+  }
+
+ 
+}
